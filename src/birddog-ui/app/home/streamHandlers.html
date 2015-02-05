@@ -1,0 +1,13 @@
+<div>
+    <div>
+        <div class="bs-callout bs-callout-info">
+            <h4>Stream Handlers</h4>
+            <p>Choose one of the known servers listed below to manage.</p>
+        </div>
+    </div>
+    <div>
+        <div class="btn-group">
+            <button class="btn btn-default" ng-repeat="streamHandler in streamHandlerNames" ng-click="selectStreamHandler(streamHandler)">{{streamHandler}}</button>
+        </div>
+    </div>
+</div>

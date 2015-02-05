@@ -1,0 +1,82 @@
+<div>
+    <div>
+        <div class="bs-callout bs-callout-info">
+            <h4>Schedules</h4>
+            <p>You can configure when the stream handler will run.<br />
+            You can set a sequence of days to run as well as the hours to run during each day.</p>
+        </div>
+        <div ng-if="scheduleForm.$dirty" class="bs-callout bs-callout-warning">
+            <p>Your form has unsaved changes! Don't forget to save before you leave this section.</p>
+        </div>
+    </div>
+    <div>
+        <form name="scheduleForm">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <button class="btn btn-default" ng-click="addNew()">Add New</button>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Daily Start Time</th>
+                            <th>Daily End Time</th>
+                            <th>Days</th>
+                            <th>Active</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="schedule in schedules">
+                            <td>
+                                <input type="text" class="form-control" ng-model="schedule.startDate" datepicker-popup="{{format}}" datepicker-options="dateOptions" close-text="Close" show-weeks="false"/>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" ng-model="schedule.endDate" datepicker-popup="{{format}}" datepicker-options="dateOptions" close-text="Close" show-weeks="false"/>
+                            </td>
+                            <td>
+                                <div style="width:45px; float: left;">
+                                    <input type="text" class="form-control" size="2" ng-model="schedule.dailyStartTime.hour"/>
+                                </div>
+                                <div style="width:10px; float: left;line-height: 34px;text-align:center;"> : </div>
+                                <div style="width:45px;float: left;">
+                                    <input type="text" class="form-control" size="2" ng-model="schedule.dailyStartTime.minute"/>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="width:45px; float: left;">
+                                    <input type="text" class="form-control" size="2" ng-model="schedule.dailyEndTime.hour"/>
+                                </div>
+                                <div style="width:10px; float: left;line-height: 34px;text-align:center;"> : </div>
+                                <div style="width:45px;float: left;">
+                                    <input type="text" class="form-control" size="2" ng-model="schedule.dailyEndTime.minute"/>
+                                </div>
+                            </td>
+                            <td>
+                                <div ng-repeat="day in dayNames track by $index">
+                                    <label>
+                                        <input type="checkbox"
+                                               name="days[]"
+                                               ng-click="toggleDay(day, schedule)"
+                                               ng-checked="schedule.days.indexOf($index) > -1"
+                                        />
+                                        {{ day }}
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <button ng-click="toggleScheduleActive(schedule)" class="btn btn-sm">{{isScheduleActive(schedule)}}</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-primary" ng-click="save()">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="height:400px">&nbsp;</div>
+</div>

@@ -1,0 +1,334 @@
+{
+	"track": [
+		{
+			"text": "3M",
+			"key": "MMM",
+			"category": "Company"
+		},
+
+		{
+			"text": "$MMM",
+			"key": "MMM",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "American Express",
+			"key": "AXP",
+			"category": "Company"
+		},
+
+		{
+			"text": "$AXP",
+			"key": "AXP",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "AT&T",
+			"key": "T",
+			"category": "Company"
+		},
+
+		{
+			"text": "$T",
+			"key": "T",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Boeing",
+			"key": "BA",
+			"category": "Company"
+		},
+
+		{
+			"text": "$BA",
+			"key": "BA",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Caterpillar",
+			"key": "CAT",
+			"category": "Company"
+		},
+
+		{
+			"text": "$CAT",
+			"key": "CAT",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Chevron",
+			"key": "CVX",
+			"category": "Company"
+		},
+
+		{
+			"text": "$CVX",
+			"key": "CVX",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Cisco Systems",
+			"key": "CSCO",
+			"category": "Company"
+		},
+
+		{
+			"text": "$CSCO",
+			"key": "CSCO",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Coca-Cola",
+			"key": "KO",
+			"category": "Company"
+		},
+
+		{
+			"text": "$KO",
+			"key": "KO",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "DuPont",
+			"key": "DD",
+			"category": "Company"
+		},
+
+		{
+			"text": "$DD",
+			"key": "DD",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "ExxonMobil",
+			"key": "XOM",
+			"category": "Company"
+		},
+
+		{
+			"text": "$XOM",
+			"key": "XOM",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "General Electric",
+			"key": "GE",
+			"category": "Company"
+		},
+
+		{
+			"text": "$GE",
+			"key": "GE",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Goldman Sachs",
+			"key": "GS",
+			"category": "Company"
+		},
+
+		{
+			"text": "$GS",
+			"key": "GS",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Home Depot",
+			"key": "HD",
+			"category": "Company"
+		},
+
+		{
+			"text": "$HD",
+			"key": "HD",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "IBM",
+			"key": "IBM",
+			"category": "Company"
+		},
+		{
+			"text": "$IBM",
+			"key": "IBM",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Intel",
+			"key": "INTC",
+			"category": "Company"
+		},
+
+		{
+			"text": "$INTC",
+			"key": "INTC",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Johnson & Johnson",
+			"key": "JNJ",
+			"category": "Company"
+		},
+
+		{
+			"text": "$JNJ",
+			"key": "JNJ",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "JPMorgan Chase",
+			"key": "JPM",
+			"category": "Company"
+		},
+
+		{
+			"text": "$JPM",
+			"key": "JPM",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "McDonalds",
+			"key": "MCD",
+			"category": "Company"
+		},
+
+		{
+			"text": "$MCD",
+			"key": "MCD",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Merck",
+			"key": "MRK",
+			"category": "Company"
+		},
+
+		{
+			"text": "$MRK",
+			"key": "MRK",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Microsoft",
+			"key": "MSFT",
+			"category": "Company"
+		},
+
+		{
+			"text": "$MSFT",
+			"key": "MSFT",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Nike",
+			"key": "NKE",
+			"category": "Company"
+		},
+
+		{
+			"text": "$NKE",
+			"key": "NKE",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Pfizer",
+			"key": "PFE",
+			"category": "Company"
+		},
+
+		{
+			"text": "$PFE",
+			"key": "PFE",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Procter & Gamble",
+			"key": "PG",
+			"category": "Company"
+		},
+
+		{
+			"text": "$PG",
+			"key": "PG",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Travelers",
+			"key": "TRV",
+			"category": "Company"
+		},
+
+		{
+			"text": "$TRV",
+			"key": "TRV",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "UnitedHealthGroup",
+			"key": "UNH",
+			"category": "Company"
+		},
+
+		{
+			"text": "$UNH",
+			"key": "UNH",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "United Technologies",
+			"key": "UTX",
+			"category": "Company"
+		},
+
+		{
+			"text": "$UTX",
+			"key": "UTX",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Verizon",
+			"key": "VZ",
+			"category": "Company"
+		},
+
+		{
+			"text": "$VZ",
+			"key": "VZ",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Visa",
+			"key": "V",
+			"category": "Company"
+		},
+
+		{
+			"text": "$V",
+			"key": "V",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Walmart",
+			"key": "WMT",
+			"category": "Company"
+		},
+
+		{
+			"text": "$WMT",
+			"key": "WMT",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "Walt Disney",
+			"key": "DIS",
+			"category": "Company"
+		},
+
+		{
+			"text": "$DIS",
+			"key": "DIS",
+			"category": "TickerSymbol"
+		}
+	],
+	"follow": []
+}

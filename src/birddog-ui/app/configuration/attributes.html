@@ -1,0 +1,32 @@
+<div>
+    <div>
+        <div class="bs-callout bs-callout-info">
+            <h4>Attributes</h4>
+            <p>You can choose from a number of attributes to store when polling for stock prices.
+        </div>
+    </div>
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Attributes</h4>
+                <div ng-if="attributeForm.$dirty" class="bs-callout bs-callout-warning">
+                    <p>Your form has unsaved changes! Don't forget to save before you leave this section.</p>
+                </div>
+            </div>
+            <form class="form-inline" name="attributeForm">
+                <div class="panel-body">
+                    <div class="clearfix">
+                        <div class="filter-label pull-left" ng-repeat="attribute in attributeNameList">
+                            <label>
+                                <input type="checkbox" ng-model="attributeSettings[attribute]" /> {{attribute}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-primary" ng-click="saveAttributes()">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

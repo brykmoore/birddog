@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoodFinder", "MoodFinder\MoodFinder.csproj", "{1608E774-39BD-47D5-BBE7-C754BBEB8493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{C70F9A10-5634-44DA-8442-77B21B8ADE7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordListGenerator", "WordListGenerator\WordListGenerator.csproj", "{BB4F377F-3BB7-49DD-85EF-2AE2C3F7A158}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1608E774-39BD-47D5-BBE7-C754BBEB8493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1608E774-39BD-47D5-BBE7-C754BBEB8493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1608E774-39BD-47D5-BBE7-C754BBEB8493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1608E774-39BD-47D5-BBE7-C754BBEB8493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C70F9A10-5634-44DA-8442-77B21B8ADE7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C70F9A10-5634-44DA-8442-77B21B8ADE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C70F9A10-5634-44DA-8442-77B21B8ADE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C70F9A10-5634-44DA-8442-77B21B8ADE7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB4F377F-3BB7-49DD-85EF-2AE2C3F7A158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB4F377F-3BB7-49DD-85EF-2AE2C3F7A158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB4F377F-3BB7-49DD-85EF-2AE2C3F7A158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB4F377F-3BB7-49DD-85EF-2AE2C3F7A158}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

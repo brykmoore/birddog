@@ -1,0 +1,21 @@
+<div class="content-area row">
+    <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+            <li ng-show="isRouteVisible('filters')" ui-sref-active="active"><a ui-sref="configuration.filters">Filters</a></li>
+            <li ng-show="isRouteVisible('mappers')" ui-sref-active="active"><a ui-sref="configuration.mappers">Mappers</a></li>
+            <li ng-show="isRouteVisible('symbols')" ui-sref-active="active"><a ui-sref="configuration.symbols">Symbols</a></li>
+            <li ng-show="isRouteVisible('attributes')" ui-sref-active="active"><a ui-sref="configuration.attributes">Attributes</a></li>
+            <li ng-show="isRouteVisible('schedules')" ui-sref-active="active"><a ui-sref="configuration.schedules">Schedules</a></li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+        <div>
+            <div class="bs-callout bs-callout-info">
+                <h5>Configuration</h5>
+                <p>Configure settings for the stream handler.</p>
+                <p><strong>NOTE: </strong>You must restart the stream handler before configuration changes take effect. </p>
+            </div>
+        </div>
+        <div ui-view></div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+{
+	"track": [
+		{
+			"text": "V8",
+			"key": "CPB",
+			"category": "Brand"
+		},
+		{
+			"text": "Cheerios",
+			"key": "GIS",
+			"category": "Brand"
+		},
+		{
+			"text": "Kindle",
+			"key": "AMZN",
+			"category": "Brand"
+		},
+		{
+			"text": "iPad",
+			"key": "AAPL",
+			"category": "Brand"
+		},
+		{
+			"text": "iPhone",
+			"key": "AAPL",
+			"category": "Brand"
+		},
+		{
+			"text": "Tide",
+			"key": "PG",
+			"category": "Brand"
+		},
+		{
+			"text": "Dawn",
+			"key": "PG",
+			"category": "Brand"
+		},
+		{
+			"text": "Campbell Soup",
+			"key": "CPB",
+			"category": "Company"
+		},
+		{
+			"text": "General Mills",
+			"key": "GIS",
+			"category": "Company"
+		},
+		{
+			"text": "Amazon",
+			"key": "AMZN",
+			"category": "Company"
+		},
+		{
+			"text": "Apple",
+			"key": "AAPL",
+			"category": "Company"
+		},
+		{
+			"text": "Proctor and Gamble",
+			"key": "PG",
+			"category": "Company"
+		},
+		{
+			"text": "CPB",
+			"key": "CPB",
+			"category": "Ticker"
+		},
+		{
+			"text": "GIS",
+			"key": "GIS",
+			"category": "Ticker"
+		},
+		{
+			"text": "AMZN",
+			"key": "AMZN",
+			"category": "Ticker"
+		},
+		{
+			"text": "AAPL",
+			"key": "AAPL",
+			"category": "Ticker"
+		},
+		{
+			"text": "PG",
+			"key": "PG",
+			"category": "Ticker"
+		},
+		{
+			"text": "$CPB",
+			"key": "CPB",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "$GIS",
+			"key": "GIS",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "$AMZN",
+			"key": "AMZN",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "$AAPL",
+			"key": "AAPL",
+			"category": "TickerSymbol"
+		},
+		{
+			"text": "$PG",
+			"key": "PG",
+			"category": "TickerSymbol"
+		}
+	],
+	"follow": []
+}

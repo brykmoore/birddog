@@ -1,0 +1,83 @@
+<div>
+    <div>
+        <div class="bs-callout bs-callout-info">
+            <h4>Health</h4>
+            <p>View the health of the stream handler.</p>
+        </div>
+    </div>
+    <div>
+        <div class="well">
+            <p>The Bird Dog stream handler's status is currently <strong>{{streamStatus}}</strong>.</p>
+            <div>
+                <button ng-click="startStream()" class="btn btn-default">Start</button>
+                <button ng-click="stopStream()" class="btn btn-default">Stop</button>
+                <button ng-click="fetchStatus()" class="btn btn-default">
+                    <span class="glyphicon glyphicon-refresh"></span> Refresh
+                </button>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
+                <div class="well">
+                    <div class="clearfix">
+                        <h4 class="pull-left">Stream Handler Sessions</h4>
+                        <button ng-click="fetchStreamHandlerSessions()" type="button" class="btn btn-default pull-right">
+                            <span class="glyphicon glyphicon-refresh"></span> Refresh
+                        </button>
+                    </div>
+                    <hr />
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>First Post Received</th>
+                                <th>Last Post Received</th>
+                                <th>Time Span (seconds)</th>
+                                <th>Number of Posts</th>
+                                <th>Rate (posts per second)</th>
+                                <th>Session Id</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="session in streamHandlerSessions">
+                                <td>{{formatTimeAsDate(session.firstPostTime)}}</td>
+                                <td>{{formatTimeAsDate(session.mostRecentPostTime)}}</td>
+                                <td>{{session.timeSpan}}</td>
+                                <td>{{session.numberOfPosts}}</td>
+                                <td>{{session.rate}}</td>
+                                <td>{{session._id.sessionId}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr />
+                <div class="well">
+                    <div class="clearfix">
+                        <h4 class="pull-left">Errors and Warnings</h4>
+                        <button ng-click="fetchErrors()" type="button" class="btn btn-default pull-right">
+                            <span class="glyphicon glyphicon-refresh"></span> Refresh
+                        </button>
+                    </div>
+                    <hr />
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Error</th>
+                                <th>Occurred</th>
+                                <th>Additional</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="error in streamHandlerErrors">
+                                <td>{{error.eventName}}</td>
+                                <td>{{formatTimeAsDate(error.occurred)}}</td>
+                                <td>{{error.additional}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

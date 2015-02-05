@@ -1,0 +1,16 @@
+* Before anything, make sure birddog-stream/config/handlers.json contains valid oauth settings.
+
+* Run "mongod" to start the mongo database server.
+
+* From birddog-stream folder:
+    * run npm install - This should install necessary node packages.
+    * run "node server.js" - This should launch the stream handler server.
+
+* From birddog-ui folder:
+    * run npm install - This should install necessary node packages.
+    * run bower install - This should install necessary bower packages.
+    * run "node server.js" - This should launch the management ui server.
+
+With the default settings, a yahoo stream handler is hosted on 3002, a twitter stream handler on 3001, and the management UI on 3000.
+
+You can navigate to the management UI home page -> stream handlers section to select whether to manage the twitter stream handler or the yahoo stream handler.

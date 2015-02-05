@@ -1,0 +1,38 @@
+* x stopping and starting results in double event listeners
+* x allow multiple servers
+* x mapper ui
+* x ui to show 'unsaved' status
+* X store stream handler name with post
+* X replace socket io w/ interval based select of last n records by server
+* X if logged in and selected stream handler is null, default page to select server
+* X if logged in and only one stream handler is configured, select it automatically
+* X capture errors, and 420s, twitter errors too
+* X display errors on activity - health
+* X activity health
+    - server status
+    - stream status
+    - rate metrics
+    - error log
+    - warn log
+* X implement reconnect according to twitter algorithm
+* X refactor PostStream.js/PostHandler.js to support non-twitter streams/stock market stream
+* X yahoo
+    * get rid of quote characters
+
+* X store matched filters for post
+* - schedules
+    * X iron out UTC vs server time differences
+    * X add days of the week
+    * X remove hard-coded scheduling from finance stream handler
+    * X days configured with start time but no end time don't calculate the correct next start time
+* X paging paging captured data
+* Collect stock symbol and category when storing filters
+* Store stock symbol and category with matched filter in received tweets
+* searching captured data
+* handle all errors & prevent server crashes
+* configure to include brands and symbols specified by the use case
+* deployment preparation
+* grunt script
+
+Future Phase
+* ui login and server-to-server authentication

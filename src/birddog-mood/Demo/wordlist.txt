@@ -1,0 +1,960 @@
+tense,Tension
+shaky,Tension
+on edge,Tension
+panicky,Tension
+relaxed,Tension
+uneasy,Tension
+restless,Tension
+anxious,Tension
+nervous,Tension
+unhappy,Depression
+sorry for things done,Depression
+sad,Depression
+blue,Depression
+hopeless,Depression
+unworthy,Depression
+discouraged,Depression
+lonely,Depression
+miserable,Depression
+gloomy,Depression
+desperate,Depression
+helpless,Depression
+worthless,Depression
+terrified,Depression
+guilty,Depression
+anger,Anger
+peeved,Anger
+grouchy,Anger
+spiteful,Anger
+annoyed,Anger
+resentful,Anger
+bitter,Anger
+ready to fight,Anger
+rebellious,Anger
+deceived,Anger
+furious,Anger
+bad tempered,Anger
+worn out,Fatigue
+listless,Fatigue
+exhausted,Fatigue
+sluggish,Fatigue
+weary,Fatigue
+bushed,Fatigue
+confused,Confusion
+unabled to concentrate,Confusion
+muddled,Confusion
+bewildered,Confusion
+efficient,Confusion
+forgetful,Confusion
+uncertain about things,Confusion
+lively,Vigour
+active,Vigour
+energetic,Vigour
+cheerful,Vigour
+alert,Vigour
+full of pep,Vigour
+carefree,Vigour
+vigorous,Vigour
+tense,Tension
+strain,Tension
+tense up,Tension
+deform,Tension
+distort,Tension
+puree,Tension
+filter,Tension
+filtrate,Tension
+separate out,Tension
+filter out,Tension
+sift,Tension
+sieve,Tension
+extend,Tension
+try,Tension
+stress,Tension
+strive,Tension
+reach,Tension
+precarious,Tension
+shaky,Tension
+shivering,Tension
+trembling,Tension
+rickety,Tension
+wobbly,Tension
+wonky,Tension
+parlous,Tension
+perilous,Tension
+touch and go,Tension
+unstable,Tension
+decrepit,Tension
+debile,Tension
+feeble,Tension
+infirm,Tension
+sapless,Tension
+weak,Tension
+weakly,Tension
+rachitic,Tension
+askew,Tension
+awry,Tension
+cockeyed,Tension
+lopsided,Tension
+skew whiff,Tension
+panicky,Tension
+panicked,Tension
+panic stricken,Tension
+panic struck,Tension
+terrified,Tension
+frightened,Tension
+scared,Tension
+relaxed,Tension
+uneasy,Tension
+awkward,Tension
+ill at ease,Tension
+anxious,Tension
+nervous,Tension
+queasy,Tension
+unquiet,Tension
+restless,Tension
+embarrassing,Tension
+sticky,Tension
+unenviable,Tension
+clumsy,Tension
+cumbersome,Tension
+inapt,Tension
+inept,Tension
+ill chosen,Tension
+bunglesome,Tension
+ungainly,Tension
+dying,Tension
+skittish,Tension
+flighty,Tension
+spooky,Tension
+aflutter,Tension
+neural,Tension
+nauseated,Tension
+nauseous,Tension
+sick,Tension
+sickish,Tension
+nauseating,Tension
+noisome,Tension
+loathsome,Tension
+offensive,Tension
+sickening,Tension
+vile,Tension
+ungratified,Tension
+unsatisfied,Tension
+unsated,Tension
+unsatiated,Tension
+flyaway,Tension
+head in the clouds,Tension
+scatterbrained,Tension
+neuronal,Tension
+neuronic,Tension
+wrath,Anger
+anger,Anger
+ire,Anger
+ira,Anger
+angriness,Anger
+choler,Anger
+individual retirement account,Anger
+IRA,Anger
+Irish Republican Army,Anger
+Provisional Irish Republican Army,Anger
+Provisional IRA,Anger
+Provos,Anger
+yellow bile,Anger
+irritability,Anger
+crossness,Anger
+fretfulness,Anger
+fussiness,Anger
+peevishness,Anger
+petulance,Anger
+see red,Anger
+annoyed,Anger
+irritated,Anger
+miffed,Anger
+nettled,Anger
+peeved,Anger
+pissed,Anger
+pissed off,Anger
+riled,Anger
+roiled,Anger
+steamed,Anger
+stung,Anger
+harassed,Anger
+harried,Anger
+pestered,Anger
+vexed,Anger
+besotted,Anger
+blind drunk,Anger
+blotto,Anger
+crocked,Anger
+cockeyed,Anger
+fuddled,Anger
+loaded,Anger
+pie eyed,Anger
+pixilated,Anger
+plastered,Anger
+slopped,Anger
+sloshed,Anger
+smashed,Anger
+soaked,Anger
+soused,Anger
+sozzled,Anger
+squiffy,Anger
+stiff,Anger
+tight,Anger
+wet,Anger
+churning,Anger
+roiling,Anger
+roily,Anger
+turbulent,Anger
+crabbed,Anger
+crabby,Anger
+cross,Anger
+fussy,Anger
+grouchy,Anger
+grumpy,Anger
+bad tempered,Anger
+ill tempered,Anger
+transverse,Anger
+transversal,Anger
+thwartwise,Anger
+finical,Anger
+finicky,Anger
+particular,Anger
+picky,Anger
+busy,Anger
+despiteful,Anger
+spiteful,Anger
+vindictive,Anger
+revengeful,Anger
+vengeful,Anger
+resentful,Anger
+biting,Anger
+bitter,Anger
+acerb,Anger
+acerbic,Anger
+acid,Anger
+acrid,Anger
+blistering,Anger
+caustic,Anger
+sulfurous,Anger
+sulphurous,Anger
+virulent,Anger
+vitriolic,Anger
+acrimonious,Anger
+barbed,Anger
+nipping,Anger
+pungent,Anger
+mordacious,Anger
+astringent,Anger
+acidic,Anger
+acidulent,Anger
+acidulous,Anger
+hot,Anger
+red hot,Anger
+blistery,Anger
+corrosive,Anger
+erosive,Anger
+mordant,Anger
+sultry,Anger
+stifling,Anger
+deadly,Anger
+venomous,Anger
+piercingly,Anger
+bitterly,Anger
+bitingly,Anger
+shrilly,Anger
+bitterness,Anger
+acrimony,Anger
+acerbity,Anger
+jaundice,Anger
+tartness,Anger
+thorniness,Anger
+resentment,Anger
+gall,Anger
+rancor,Anger
+rancour,Anger
+rebellious,Anger
+disaffected,Anger
+ill affected,Anger
+malcontent,Anger
+angry,Anger
+furious,Anger
+raging,Anger
+tempestuous,Anger
+wild,Anger
+angered,Anger
+enraged,Anger
+infuriated,Anger
+maddened,Anger
+ferocious,Anger
+fierce,Anger
+savage,Anger
+stormy,Anger
+barbarian,Anger
+barbaric,Anger
+uncivilized,Anger
+uncivilised,Anger
+crazy,Anger
+dotty,Anger
+gaga,Anger
+godforsaken,Anger
+waste,Anger
+fantastic,Anger
+hazardous,Anger
+risky,Anger
+raving mad,Anger
+baseless,Anger
+groundless,Anger
+idle,Anger
+unfounded,Anger
+unwarranted,Anger
+violent,Anger
+untamed,Anger
+boisterous,Anger
+rough,Anger
+cutthroat,Anger
+bowelless,Anger
+tearing,Anger
+vehement,Anger
+trigger happy,Anger
+feral,Anger
+ferine,Anger
+barbarous,Anger
+brutal,Anger
+cruel,Anger
+fell,Anger
+roughshod,Anger
+vicious,Anger
+infelicitous,Depression
+unhappy,Depression
+dysphoric,Depression
+distressed,Depression
+disquieted,Depression
+disturbed,Depression
+upset,Depression
+worried,Depression
+stressed,Depression
+hard pressed,Depression
+hard put,Depression
+in a bad way,Depression
+deplorable,Depression
+distressing,Depression
+lamentable,Depression
+pitiful,Depression
+sad,Depression
+sorry,Depression
+condemnable,Depression
+criminal,Depression
+reprehensible,Depression
+vicious,Depression
+execrable,Depression
+miserable,Depression
+woeful,Depression
+wretched,Depression
+distressful,Depression
+disturbing,Depression
+perturbing,Depression
+troubling,Depression
+worrisome,Depression
+worrying,Depression
+hapless,Depression
+misfortunate,Depression
+pathetic,Depression
+piteous,Depression
+pitiable,Depression
+poor,Depression
+blue,Depression
+dark,Depression
+dingy,Depression
+disconsolate,Depression
+dismal,Depression
+gloomy,Depression
+grim,Depression
+drab,Depression
+drear,Depression
+dreary,Depression
+good for nothing,Depression
+good for naught,Depression
+meritless,Depression
+no account,Depression
+no count,Depression
+no good,Depression
+regretful,Depression
+bad,Depression
+puritanic,Depression
+puritanical,Depression
+aristocratic,Depression
+aristocratical,Depression
+blue blooded,Depression
+gentle,Depression
+patrician,Depression
+gamy,Depression
+gamey,Depression
+juicy,Depression
+naughty,Depression
+racy,Depression
+risque,Depression
+spicy,Depression
+blasphemous,Depression
+profane,Depression
+depressed,Depression
+dispirited,Depression
+down,Depression
+downcast,Depression
+downhearted,Depression
+down in the mouth,Depression
+low,Depression
+low spirited,Depression
+bluish,Depression
+blueish,Depression
+colored,Depression
+coloured,Depression
+dark skinned,Depression
+non white,Depression
+obscure,Depression
+benighted,Depression
+dour,Depression
+glowering,Depression
+glum,Depression
+moody,Depression
+morose,Depression
+saturnine,Depression
+sour,Depression
+sullen,Depression
+black,Depression
+sinister,Depression
+dirty,Depression
+muddied,Depression
+muddy,Depression
+begrimed,Depression
+grimy,Depression
+grubby,Depression
+grungy,Depression
+raunchy,Depression
+inconsolable,Depression
+unconsolable,Depression
+glooming,Depression
+gloomful,Depression
+sulky,Depression
+forbidding,Depression
+mordant,Depression
+ghastly,Depression
+grisly,Depression
+gruesome,Depression
+macabre,Depression
+sick,Depression
+inexorable,Depression
+relentless,Depression
+stern,Depression
+unappeasable,Depression
+unforgiving,Depression
+unrelenting,Depression
+olive drab,Depression
+sober,Depression
+somber,Depression
+sombre,Depression
+priggish,Depression
+prim,Depression
+prissy,Depression
+prudish,Depression
+square toed,Depression
+straitlaced,Depression
+strait laced,Depression
+straightlaced,Depression
+straight laced,Depression
+tight laced,Depression
+victorian,Depression
+easy,Depression
+soft,Depression
+docile,Depression
+game,Depression
+gritty,Depression
+mettlesome,Depression
+spirited,Depression
+spunky,Depression
+high,Depression
+fat,Depression
+luscious,Depression
+red hot,Depression
+toothsome,Depression
+voluptuous,Depression
+full bodied,Depression
+rich,Depression
+robust,Depression
+lively,Depression
+hot,Depression
+piquant,Depression
+savory,Depression
+savoury,Depression
+zesty,Depression
+sacrilegious,Depression
+unconsecrated,Depression
+unsanctified,Depression
+secular,Depression
+listless,Depression
+broken,Depression
+crushed,Depression
+humbled,Depression
+humiliated,Depression
+depleted,Depression
+humble,Depression
+lowly,Depression
+modest,Depression
+small,Depression
+abject,Depression
+low down,Depression
+scummy,Depression
+scurvy,Depression
+low pitched,Depression
+low toned,Depression
+amobarbital sodium,Depression
+blue angel,Depression
+blue devil,Depression
+Amytal,Depression
+bluing,Depression
+blueing,Depression
+blue sky,Depression
+blue air,Depression
+wild blue yonder,Depression
+blueness,Depression
+blueweed,Depression
+blue thistle,Depression
+viper's bugloss,Depression
+Echium vulgare,Depression
+hopeless,Depression
+despicable,Depression
+ugly,Depression
+vile,Depression
+slimy,Depression
+unworthy,Depression
+worthless,Depression
+undeserving,Depression
+atrocious,Depression
+frightful,Depression
+horrifying,Depression
+horrible,Depression
+surly,Depression
+nauseating,Depression
+nauseous,Depression
+noisome,Depression
+queasy,Depression
+loathsome,Depression
+offensive,Depression
+sickening,Depression
+slimed,Depression
+suffering,Depression
+discouraged,Depression
+demoralized,Depression
+demoralised,Depression
+disheartened,Depression
+lonely,Depression
+solitary,Depression
+unfrequented,Depression
+lone,Depression
+lonesome,Depression
+alone,Depression
+only,Depression
+sole,Depression
+nongregarious,Depression
+nonsocial,Depression
+measly,Depression
+paltry,Depression
+negligible,Depression
+trifling,Depression
+damnable,Depression
+abominable,Depression
+detestable,Depression
+odious,Depression
+woebegone,Depression
+unhopeful,Depression
+funky,Depression
+ridiculous,Depression
+silly,Depression
+inadequate,Depression
+short,Depression
+sluggish,Depression
+huffish,Depression
+desperate,Depression
+dire,Depression
+heroic,Depression
+do or die,Depression
+despairing,Depression
+awful,Depression
+direful,Depression
+dread,Depression
+dreaded,Depression
+dreadful,Depression
+fearful,Depression
+fearsome,Depression
+frightening,Depression
+horrendous,Depression
+horrific,Depression
+terrible,Depression
+expansive,Depression
+grand,Depression
+heroical,Depression
+epic,Depression
+larger than life,Depression
+helpless,Depression
+lost,Depression
+incapacitated,Depression
+baffled,Depression
+befuddled,Depression
+bemused,Depression
+bewildered,Depression
+confounded,Depression
+confused,Depression
+mazed,Depression
+mixed up,Depression
+at sea,Depression
+deep in thought,Depression
+preoccupied,Depression
+missed,Depression
+disoriented,Depression
+panicky,Depression
+panicked,Depression
+panic stricken,Depression
+panic struck,Depression
+terrified,Depression
+frightened,Depression
+scared,Depression
+guilty,Depression
+hangdog,Depression
+shamefaced,Depression
+shamed,Depression
+sheepish,Depression
+discredited,Depression
+disgraced,Depression
+dishonored,Depression
+confused,Confusion
+broken,Confusion
+disordered,Confusion
+upset,Confusion
+disoriented,Confusion
+lost,Confusion
+disconnected,Confusion
+disjointed,Confusion
+garbled,Confusion
+illogical,Confusion
+scattered,Confusion
+unconnected,Confusion
+baffled,Confusion
+befuddled,Confusion
+bemused,Confusion
+bewildered,Confusion
+confounded,Confusion
+mazed,Confusion
+mixed up,Confusion
+at sea,Confusion
+busted,Confusion
+wiped out,Confusion
+impoverished,Confusion
+rugged,Confusion
+broken in,Confusion
+unkept,Confusion
+crushed,Confusion
+humbled,Confusion
+humiliated,Confusion
+low,Confusion
+unordered,Confusion
+overturned,Confusion
+upturned,Confusion
+disquieted,Confusion
+distressed,Confusion
+disturbed,Confusion
+worried,Confusion
+alienated,Confusion
+anomic,Confusion
+helpless,Confusion
+deep in thought,Confusion
+preoccupied,Confusion
+missed,Confusion
+abrupt,Confusion
+disunited,Confusion
+fragmented,Confusion
+split,Confusion
+staccato,Confusion
+dislocated,Confusion
+separated,Confusion
+unlogical,Confusion
+addled,Confusion
+muddled,Confusion
+muzzy,Confusion
+woolly,Confusion
+wooly,Confusion
+woolly headed,Confusion
+wooly minded,Confusion
+befogged,Confusion
+bleary,Confusion
+blurred,Confusion
+blurry,Confusion
+foggy,Confusion
+fuzzy,Confusion
+hazy,Confusion
+lanate,Confusion
+wooly haired,Confusion
+woolly haired,Confusion
+flocculent,Confusion
+effective,Confusion
+efficient,Confusion
+good,Confusion
+in effect,Confusion
+in force,Confusion
+effectual,Confusion
+efficacious,Confusion
+forgetful,Confusion
+oblivious,Confusion
+unmindful,Confusion
+mindless,Confusion
+unretentive,Confusion
+short,Confusion
+reasonless,Confusion
+senseless,Confusion
+asinine,Confusion
+fatuous,Confusion
+inane,Confusion
+vacuous,Confusion
+brusque,Confusion
+brusk,Confusion
+curt,Confusion
+shortsighted,Confusion
+unforesightful,Confusion
+myopic,Confusion
+light,Confusion
+scant,Confusion
+inadequate,Confusion
+poor,Confusion
+little,Confusion
+full of life,Vigour
+lively,Vigour
+vital,Vigour
+bouncy,Vigour
+live,Vigour
+resilient,Vigour
+springy,Vigour
+alert,Vigour
+brisk,Vigour
+merry,Vigour
+rattling,Vigour
+snappy,Vigour
+spanking,Vigour
+zippy,Vigour
+racy,Vigour
+life sustaining,Vigour
+critical,Vigour
+bouncing,Vigour
+peppy,Vigour
+spirited,Vigour
+alive,Vigour
+hot,Vigour
+unrecorded,Vigour
+awake,Vigour
+watchful,Vigour
+bracing,Vigour
+fresh,Vigour
+refreshing,Vigour
+refreshful,Vigour
+tonic,Vigour
+gay,Vigour
+festal,Vigour
+festive,Vigour
+jocund,Vigour
+jolly,Vigour
+jovial,Vigour
+mirthful,Vigour
+fantastic,Vigour
+grand,Vigour
+howling,Vigour
+marvelous,Vigour
+marvellous,Vigour
+terrific,Vigour
+tremendous,Vigour
+wonderful,Vigour
+wondrous,Vigour
+dapper,Vigour
+dashing,Vigour
+jaunty,Vigour
+natty,Vigour
+raffish,Vigour
+rakish,Vigour
+spiffy,Vigour
+spruce,Vigour
+crisp,Vigour
+frosty,Vigour
+nipping,Vigour
+nippy,Vigour
+whipping,Vigour
+snappish,Vigour
+blue,Vigour
+gamy,Vigour
+gamey,Vigour
+juicy,Vigour
+naughty,Vigour
+risque,Vigour
+spicy,Vigour
+full bodied,Vigour
+rich,Vigour
+robust,Vigour
+active,Vigour
+dynamic,Vigour
+participating,Vigour
+combat ready,Vigour
+fighting,Vigour
+dynamical,Vigour
+active voice,Vigour
+active agent,Vigour
+energetic,Vigour
+gumptious,Vigour
+industrious,Vigour
+up and coming,Vigour
+hardworking,Vigour
+tireless,Vigour
+untiring,Vigour
+cheerful,Vigour
+pollyannaish,Vigour
+upbeat,Vigour
+insomniac,Vigour
+sleepless,Vigour
+alarm,Vigour
+warning signal,Vigour
+alarum,Vigour
+alerting,Vigour
+qui vive,Vigour
+alarm clock,Vigour
+warning device,Vigour
+alarm system,Vigour
+dismay,Vigour
+consternation,Vigour
+alertness,Vigour
+appal,Vigour
+appall,Vigour
+horrify,Vigour
+carefree,Vigour
+devil may care,Vigour
+freewheeling,Vigour
+happy go lucky,Vigour
+harum scarum,Vigour
+slaphappy,Vigour
+unworried,Vigour
+punch drunk,Vigour
+silly,Vigour
+vigorous,Vigour
+exhausted,Fatigue
+dog tired,Fatigue
+fagged,Fatigue
+fatigued,Fatigue
+played out,Fatigue
+spent,Fatigue
+washed out,Fatigue
+worn out,Fatigue
+bleached,Fatigue
+faded,Fatigue
+washy,Fatigue
+dispirited,Fatigue
+listless,Fatigue
+gloomy,Fatigue
+grim,Fatigue
+blue,Fatigue
+depressed,Fatigue
+down,Fatigue
+downcast,Fatigue
+downhearted,Fatigue
+down in the mouth,Fatigue
+low,Fatigue
+low spirited,Fatigue
+inert,Fatigue
+sluggish,Fatigue
+soggy,Fatigue
+torpid,Fatigue
+dull,Fatigue
+slow,Fatigue
+sulky,Fatigue
+indifferent,Fatigue
+neutral,Fatigue
+doughy,Fatigue
+boggy,Fatigue
+marshy,Fatigue
+miry,Fatigue
+mucky,Fatigue
+muddy,Fatigue
+quaggy,Fatigue
+sloppy,Fatigue
+sloughy,Fatigue
+squashy,Fatigue
+swampy,Fatigue
+waterlogged,Fatigue
+dormant,Fatigue
+hibernating,Fatigue
+leaden,Fatigue
+thudding,Fatigue
+dense,Fatigue
+dim,Fatigue
+dumb,Fatigue
+obtuse,Fatigue
+boring,Fatigue
+deadening,Fatigue
+ho hum,Fatigue
+irksome,Fatigue
+tedious,Fatigue
+tiresome,Fatigue
+wearisome,Fatigue
+muffled,Fatigue
+muted,Fatigue
+softened,Fatigue
+glooming,Fatigue
+gloomful,Fatigue
+huffish,Fatigue
+aweary,Fatigue
+weary,Fatigue
+tire,Fatigue
+pall,Fatigue
+fatigue,Fatigue
+jade,Fatigue
+wear upon,Fatigue
+tire out,Fatigue
+wear,Fatigue
+wear out,Fatigue
+outwear,Fatigue
+wear down,Fatigue
+fag out,Fatigue
+fag,Fatigue
+bore,Fatigue
+run down,Fatigue
+exhaust,Fatigue
+play out,Fatigue
+sap,Fatigue
+die,Fatigue
+become flat,Fatigue
+cloy,Fatigue
+daunt,Fatigue
+dash,Fatigue
+scare off,Fatigue
+frighten off,Fatigue
+scare away,Fatigue
+frighten away,Fatigue
+scare,Fatigue
+put on,Fatigue
+get into,Fatigue
+don,Fatigue
+assume,Fatigue
+break,Fatigue
+bust,Fatigue
+fall apart,Fatigue
+hold out,Fatigue
+endure,Fatigue
+wear off,Fatigue
+wear thin,Fatigue
+bear,Fatigue
+have on,Fatigue
+labor,Fatigue
+labour,Fatigue
+toil,Fatigue
+travail,Fatigue
+grind,Fatigue
+drudge,Fatigue
+dig,Fatigue
+moil,Fatigue
+all in,Fatigue
+beat,Fatigue
+bushed,Fatigue
+dead,Fatigue

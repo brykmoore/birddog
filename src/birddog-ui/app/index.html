@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" ng-app="birddog">
+<head>
+    <title>Bird Dog</title>
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/angular/angular-csp.css" />
+    <link rel="stylesheet" href="assets/main.css" />
+    <link rel="stylesheet" href="vendor/angular-loading-bar/build/loading-bar.min.css" />
+       <link rel="stylesheet" href="assets/main.css" />
+</head>
+<body>
+<div>
+    <div class="container">
+        <div class="clearfix" style="margin-top:10px;">
+            <img src="assets/birddog-logo.jpg" class="pull-left" height="60" style="margin-right: 10px" />
+            <h1 class="pull-left">Bird Dog <span class="text-muted">(v0.0.1)</span></h1>
+        </div>
+        <div ng-if="streamHandlerName" class="row current-server">
+            Currently managing {{streamHandlerName}}.
+        </div>
+        <div class="row">
+            <ul class="nav nav-tabs">
+                <li ui-sref-active="active" ui-nested><a ui-sref="home">Home</a></li>
+                <li ng-if="streamHandlerName" ui-sref-active="active" ui-nested><a ui-sref="activity">Activity</a></li>
+                <li ng-if="streamHandlerName" ui-sref-active="active" ui-nested><a ui-sref="configuration">Configuration</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-view container" ui-view></div>
+</div>
+<!-- build:js scripts/main.js -->
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="vendor/underscore/underscore.js"></script>
+<script src="vendor/angular/angular.js"></script>
+<!--<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>-->
+<script src="common/angular-ui-router.js"></script>
+<!-- http://angular-ui.github.io/bootstrap/ -->
+<!-- https://github.com/angular-ui/bootstrap/tree/bootstrap3 -->
+<script src="other/ui-bootstrap-bootstrap3/dist/ui-bootstrap-custom-tpls-0.8.0-SNAPSHOT.js"></script>
+<script src="vendor/angular-loading-bar/build/loading-bar.js" ></script>
+<script src="common/services.js"></script>
+<!--<script src="scripts/controllers.js"></script>-->
+<script src="home/index.js"></script>
+<script src="home/streamHandlers.js"></script>
+<script src="login/login.js"></script>
+<script src="activity/index.js"></script>
+<script src="activity/health.js"></script>
+<script src="activity/data.js"></script>
+<script src="activity/recent.js"></script>
+<script src="configuration/index.js"></script>
+<script src="configuration/filters.js"></script>
+<script src="configuration/mappers.js"></script>
+<script src="configuration/schedules.js"></script>
+<script src="configuration/symbols.js"></script>
+<script src="configuration/attributes.js"></script>
+<script src="app.js"></script>
+<!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,47 @@
+<div>
+    <div>
+        <div class="bs-callout bs-callout-info">
+            <h4>Data</h4>
+            <p>Data captured by the stream handler.</p>
+        </div>
+    </div>
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <p>View data captured by Bird Dog in the table below.</p>
+            </div>
+            <div class="panel-body">
+                <ul class="pager">
+                    <li class="previous"><a href ng-click="prev()">&larr; Newer</a></li>
+                    <li class="next"><a href ng-click="next()">Older &rarr;</a></li>
+                </ul>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="clearfix" ng-repeat="column in headers track by $index">
+                                {{ headers[$index] }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="record in records">
+                            <td class="clearfix" ng-repeat="prop in record track by $index">
+                                <div ng-if="isObjectArray(record[$index])">
+                                    <div ng-repeat="item in record[$index]">
+                                        <div ng-repeat="(key, val) in item">
+                                            <span>{{ key }}</span>: <span>{{ val }}</span>
+                                        </div>
+                                        <hr />
+                                    </div>
+                                </div>
+                                <div ng-if="isSimpleType(record[$index])">
+                                    {{ record[$index] }}
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

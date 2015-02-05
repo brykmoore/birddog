@@ -1,0 +1,87 @@
+.filter-label {
+    margin: 10px 10px 0 0;
+    padding: 2px 6px 2px 0;
+}
+
+.filter-label .label-info {
+    font-size: 1.1em;
+    padding: 6px;
+}
+
+.label-remove {
+    cursor: pointer;
+}
+
+.bs-callout {
+    /*margin: 20px 0;*/
+    margin: 0 0 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+}
+
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.bs-callout-info {
+    background-color: #f4f8fa;
+    border-color: #bce8f1;
+}
+.bs-callout-warning {
+    background-color: #faf8f0;
+    border-color: #faebcc;
+}
+
+.bs-callout-warning h4 {
+    color: #8a6d3b;
+}
+
+.bs-callout-info h4 {
+    color: #34789a;
+}
+
+
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+
+.grid-style {
+    border: 1px solid rgb(212,212,212);
+    height: 400px;
+}
+
+.current-server {
+    padding: 15px 20px;
+    color: #777;
+    background-color: #fafafa;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+}
+
+.content-area {
+    margin-top: 10px;
+}
+
+.post-field {
+    width: 200px;
+}
+
+.post-field, .post-field.label, .post-field-value {
+    float: left;
+    margin-right: 5px;
+}
+
+.post-field-label {
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.post-field-value {
+
+}
+
+form input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+}

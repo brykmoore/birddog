@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Tweet Stream 1",
+        "module": "TweetStream",
+        "server": {
+            "port": 3001,
+            "host": "127.0.0.1"
+        },
+        "streamConfig": {
+            "oauth": {
+                "consumer_key": "8lcSBjJevMiqsYqgD0jsg",
+                "consumer_secret": "ml5XQD4Pzz6qqAyevr5oPi2u2V0IpTwchag7itRAgY",
+                "access_token": "108294520-exkPOMkpsSCenbvoHXOYQEoypuVlm67vaySPEpY2",
+                "access_token_secret": "asucIquJgVerfs4y3352Ll7RKGrtwc2iRJP5AWzmrxtOG"
+            }
+        },
+        "settingsConfig": {
+            "settingsPath": "tweet_stream_1",
+            "modules": ["filters", "mappers", "schedules"]
+        }
+    },
+    {
+        "name": "Yahoo Finance Stream 1",
+        "module": "YahooFinanceStream",
+        "server": {
+            "port": 3002,
+            "host": "127.0.0.1"
+        },
+        "streamConfig": {
+
+        },
+        "settingsConfig": {
+            "settingsPath": "yahoo_finance_stream_1",
+            "modules": ["polling", "symbols", "attributes", "schedules"]
+        }
+    }
+]

@@ -1,0 +1,42 @@
+<div>
+    <div>
+        <div class="bs-callout bs-callout-info">
+            <h4>Mappers</h4>
+            <p>You can configure which mappers will run and the order they will run in when a post is received.</p>
+        </div>
+        <div ng-if="mapperForm.$dirty" class="bs-callout bs-callout-warning">
+            <p>Your form has unsaved changes! Don't forget to save before you leave this section.</p>
+        </div>
+    </div>
+    <div>
+        <form name="mapperForm">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Mapper Name</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="mapper in allMappers">
+                            <td>{{mapper}}</td>
+                            <td>
+                                <button ng-click="toggleMapperActive(mapper)" class="btn btn-sm">{{isMapperActive(mapper)}}</button>
+                                <div class="btn-group btn-group-sm">
+                                    <button class="btn btn-default" ng-click="moveMapperUp(mapper)"><span class="glyphicon glyphicon-arrow-up"></span></button>
+                                    <button class="btn btn-default" ng-click="moveMapperDown(mapper)"><span class="glyphicon glyphicon-arrow-down"></span></button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-primary" ng-click="save()">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div>
+    <div>
+        <div class="bs-callout bs-callout-info">
+            <h4>Recent Activity</h4>
+            <p>The recent activity of the stream handler.</p>
+        </div>
+    </div>
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <p>The Bird Dog stream handler's status is currently <strong>{{streamStatus}}</strong>.</p>
+                <p>This table shows the most recent posts captured by this Bird Dog stream handler.</p>
+                <div>
+                    <button ng-click="startStream()" class="btn btn-default">Start</button>
+                    <button ng-click="stopStream()" class="btn btn-default">Stop</button>
+                </div>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Posts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="post in recentActivity track by $index">
+                            <td class="clearfix">
+                                <div class="post-field clearfix" ng-repeat="field in recentActivity[$index].fields track by $index">
+                                    <div class="post-field-label">{{ post.fields[$index] }}:</div>
+                                    <div class="post-field-value">{{ post.values[$index] }}</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

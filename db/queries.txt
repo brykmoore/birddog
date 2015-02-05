@@ -1,0 +1,28 @@
+db.posts.mapReduce(
+    function() { 
+        if(this.streamHandler == 'Tweet Stream 1') {
+            var moodObject = {};
+            this.mood.forEach(function(singleMood) {
+                moodObject[singleMood.Category] = singleMood.Count;
+            });
+            this.matchExplanations.forEach(function(matchExplanation) {            
+                emit(matchExplanation.key, moodObject);
+            });
+        }
+    },
+    function(key, values) {
+        var moodTotals = {};
+        values.forEach(function(value) {
+            for(var p in value) {
+                if(!moodTotals[p])
+                    moodTotals[p] = 0;
+				if(value[p] > 0)
+                moodTotals[p] += 1;
+            }
+        });
+        return moodTotals;
+    },
+    {
+        "out": "mood_totals_by_key"
+    }
+);

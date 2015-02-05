@@ -1,0 +1,27 @@
+db.posts.ensureIndex({
+	streamHandler: 1,
+	streamHandlerSessionId: 1,
+	streamHandlerReceived: 1
+});
+
+db.posts.ensureIndex({
+	"matchExplanations.key": 1
+});
+
+
+db.posts.ensureIndex({
+	"matchExplanations.text": 1
+});
+
+db.posts.ensureIndex({
+	"matchExplanations.category": 1
+});
+
+db.posts.ensureIndex({
+	"mood.Category": 1
+});
+
+db.postStreamEvents.ensureIndex({
+	streamHandler: 1,
+	eventName: 1
+});

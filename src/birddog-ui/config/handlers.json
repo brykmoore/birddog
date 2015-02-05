@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Tweet Stream 1",
+        "module": "TweetStream",
+        "server": {
+            "port": 3001,
+            "host": "127.0.0.1"
+        },
+        "settingsConfig": {
+            "modules": ["filters", "mappers", "schedules"]
+        },
+        "viewConfig": {
+            "dataPoints": ["text", "mood", "matchExplanations", "screen_name", "streamHandlerReceivedDate"]
+        }
+    },
+    {
+        "name": "Yahoo Finance Stream 1",
+        "module": "YahooFinanceStream",
+        "server": {
+            "port": 3002,
+            "host": "127.0.0.1"
+        },
+        "settingsConfig": {
+            "modules": ["polling", "symbols", "attributes", "schedules"]
+        },
+        "viewConfig": {
+            "dataPoints": ["Symbol", "Name", "Last Trade (Price Only)", "Last Trade Date", "Last Trade Time", "streamHandlerReceivedDate"]
+        }
+    }
+]

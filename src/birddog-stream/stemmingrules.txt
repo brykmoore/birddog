@@ -1,0 +1,27 @@
+3+ies  -> y
+3+ing  ->
+4+ness ->
+ss     -> ss
+3+s    ->
+4+ion  ->
+4+ism  ->
+4+ly   ->
+3+eed  -> ee
+4+ied  -> y
+4+ed   ->
+3+ed   -> e
+4+er   ->
+4+ful  ->
+4+able ->
+4+ible ->
+3+v    -> f
+4+e    ->
+3+dd   -> d
+3+gg   -> g
+3+ll   -> l
+3+mm   -> m
+3+nn   -> n
+3+pp   -> p
+3+rr   -> r
+3+ss   -> s
+3+tt   -> t
