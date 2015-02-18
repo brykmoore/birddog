@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="birddogModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="birddogModelStoreContainer">
+          <EntitySet Name="analysis" EntityType="birddogModel.Store.analysis" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="analysis">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="month" Type="int" />
+          <Property Name="day" Type="int" />
+          <Property Name="hours" Type="int" />
+          <Property Name="minutes" Type="int" />
+          <Property Name="symbol" Type="varchar" MaxLength="50" />
+          <Property Name="total_tweets" Type="int" />
+          <Property Name="start_price" Type="decimal" Scale="5" />
+          <Property Name="start_volume" Type="decimal" Scale="5" />
+          <Property Name="total_mood_1" Type="decimal" Scale="5" />
+          <Property Name="total_mood_2" Type="decimal" Scale="5" />
+          <Property Name="total_mood_3" Type="decimal" Scale="5" />
+          <Property Name="total_mood_4" Type="decimal" Scale="5" />
+          <Property Name="total_mood_5" Type="decimal" Scale="5" />
+          <Property Name="total_mood_6" Type="decimal" Scale="5" />
+          <Property Name="total_mood_7" Type="decimal" Scale="5" />
+          <Property Name="total_mood_8" Type="decimal" Scale="5" />
+          <Property Name="total_mood_9" Type="decimal" Scale="5" />
+          <Property Name="total_mood_10" Type="decimal" Scale="5" />
+          <Property Name="bing_positive" Type="decimal" Scale="5" />
+          <Property Name="bing_negative" Type="decimal" Scale="5" />
+          <Property Name="change_in_percent" Type="varchar" MaxLength="50" />
+          <Property Name="class" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="birddogModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="birddogEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="analyses" EntityType="birddogModel.analysis" />
+        </EntityContainer>
+        <EntityType Name="analysis">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="month" Type="Int32" />
+          <Property Name="day" Type="Int32" />
+          <Property Name="hours" Type="Int32" />
+          <Property Name="minutes" Type="Int32" />
+          <Property Name="symbol" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="total_tweets" Type="Int32" />
+          <Property Name="start_price" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="start_volume" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total_mood_1" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total_mood_2" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total_mood_3" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total_mood_4" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total_mood_5" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total_mood_6" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total_mood_7" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total_mood_8" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total_mood_9" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="total_mood_10" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="bing_positive" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="bing_negative" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="change_in_percent" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="class" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="birddogModelStoreContainer" CdmEntityContainer="birddogEntities">
+          <EntitySetMapping Name="analyses">
+            <EntityTypeMapping TypeName="birddogModel.analysis">
+              <MappingFragment StoreEntitySet="analysis">
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="day" ColumnName="day" />
+                <ScalarProperty Name="hours" ColumnName="hours" />
+                <ScalarProperty Name="minutes" ColumnName="minutes" />
+                <ScalarProperty Name="symbol" ColumnName="symbol" />
+                <ScalarProperty Name="total_tweets" ColumnName="total_tweets" />
+                <ScalarProperty Name="start_price" ColumnName="start_price" />
+                <ScalarProperty Name="start_volume" ColumnName="start_volume" />
+                <ScalarProperty Name="total_mood_1" ColumnName="total_mood_1" />
+                <ScalarProperty Name="total_mood_2" ColumnName="total_mood_2" />
+                <ScalarProperty Name="total_mood_3" ColumnName="total_mood_3" />
+                <ScalarProperty Name="total_mood_4" ColumnName="total_mood_4" />
+                <ScalarProperty Name="total_mood_5" ColumnName="total_mood_5" />
+                <ScalarProperty Name="total_mood_6" ColumnName="total_mood_6" />
+                <ScalarProperty Name="total_mood_7" ColumnName="total_mood_7" />
+                <ScalarProperty Name="total_mood_8" ColumnName="total_mood_8" />
+                <ScalarProperty Name="total_mood_9" ColumnName="total_mood_9" />
+                <ScalarProperty Name="total_mood_10" ColumnName="total_mood_10" />
+                <ScalarProperty Name="bing_positive" ColumnName="bing_positive" />
+                <ScalarProperty Name="bing_negative" ColumnName="bing_negative" />
+                <ScalarProperty Name="change_in_percent" ColumnName="change_in_percent" />
+                <ScalarProperty Name="class" ColumnName="class" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

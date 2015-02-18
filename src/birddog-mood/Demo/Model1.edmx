@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="birddogModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="birddogModelStoreContainer">
+          <EntitySet Name="tweets" EntityType="birddogModel.Store.tweets" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="tweets">
+          <Key>
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="_id" Type="varchar" MaxLength="100" />
+          <Property Name="id_str" Type="varchar" MaxLength="100" />
+          <Property Name="text" Type="text" />
+          <Property Name="retweeted" Type="varchar" MaxLength="100" />
+          <Property Name="screen_name" Type="varchar" MaxLength="1000" />
+          <Property Name="followers_count" Type="int" />
+          <Property Name="match_key_1" Type="varchar" MaxLength="100" />
+          <Property Name="match_text_1" Type="varchar" MaxLength="100" />
+          <Property Name="match_cat_1" Type="varchar" MaxLength="100" />
+          <Property Name="match_key_2" Type="varchar" MaxLength="100" />
+          <Property Name="match_text_2" Type="varchar" MaxLength="100" />
+          <Property Name="match_cat_2" Type="varchar" MaxLength="100" />
+          <Property Name="match_key_3" Type="varchar" MaxLength="100" />
+          <Property Name="match_text_3" Type="varchar" MaxLength="100" />
+          <Property Name="match_cat_3" Type="varchar" MaxLength="100" />
+          <Property Name="match_key_4" Type="varchar" MaxLength="100" />
+          <Property Name="match_text_4" Type="varchar" MaxLength="100" />
+          <Property Name="match_cat_4" Type="varchar" MaxLength="100" />
+          <Property Name="match_key_5" Type="varchar" MaxLength="100" />
+          <Property Name="match_text_5" Type="varchar" MaxLength="100" />
+          <Property Name="match_cat_5" Type="varchar" MaxLength="100" />
+          <Property Name="match_key_6" Type="varchar" MaxLength="100" />
+          <Property Name="match_text_6" Type="varchar" MaxLength="100" />
+          <Property Name="match_cat_6" Type="varchar" MaxLength="100" />
+          <Property Name="mood_name_1" Type="varchar" MaxLength="100" />
+          <Property Name="mood_value_1" Type="decimal" Scale="8" />
+          <Property Name="mood_name_2" Type="varchar" MaxLength="100" />
+          <Property Name="mood_value_2" Type="decimal" Scale="8" />
+          <Property Name="mood_name_3" Type="varchar" MaxLength="100" />
+          <Property Name="mood_value_3" Type="decimal" Scale="8" />
+          <Property Name="mood_name_4" Type="varchar" MaxLength="100" />
+          <Property Name="mood_value_4" Type="decimal" Scale="8" />
+          <Property Name="mood_name_5" Type="varchar" MaxLength="100" />
+          <Property Name="mood_value_5" Type="decimal" Scale="8" />
+          <Property Name="mood_name_6" Type="varchar" MaxLength="100" />
+          <Property Name="mood_value_6" Type="decimal" Scale="8" />
+          <Property Name="mood_name_7" Type="varchar" MaxLength="100" />
+          <Property Name="mood_value_7" Type="decimal" Scale="8" />
+          <Property Name="mood_name_8" Type="varchar" MaxLength="100" />
+          <Property Name="mood_value_8" Type="decimal" Scale="8" />
+          <Property Name="mood_name_9" Type="varchar" MaxLength="100" />
+          <Property Name="mood_value_9" Type="decimal" Scale="8" />
+          <Property Name="mood_name_10" Type="varchar" MaxLength="100" />
+          <Property Name="mood_value_10" Type="decimal" Scale="8" />
+          <Property Name="time" Type="bigint" />
+          <Property Name="utc_date" Type="varchar" MaxLength="1000" />
+          <Property Name="utc_year" Type="int" />
+          <Property Name="utc_month" Type="int" />
+          <Property Name="utc_day" Type="int" />
+          <Property Name="utc_hours" Type="int" />
+          <Property Name="utc_minutes" Type="int" />
+          <Property Name="nm_utc_year" Type="int" />
+          <Property Name="nm_utc_month" Type="int" />
+          <Property Name="nm_utc_day" Type="int" />
+          <Property Name="nm_utc_hours" Type="int" />
+          <Property Name="nm_utc_minutes" Type="int" />
+          <Property Name="bing_positive" Type="int" />
+          <Property Name="bing_negative" Type="int" />
+          <Property Name="id" Type="nchar" MaxLength="10" />
+          <Property Name="pmid" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="birddogModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="birddogEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tweets" EntityType="birddogModel.tweet" />
+        </EntityContainer>
+        <EntityType Name="tweet">
+          <Key>
+            <PropertyRef Name="pmid" />
+          </Key>
+          <Property Name="C_id" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="id_str" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="text" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="retweeted" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="screen_name" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="followers_count" Type="Int32" />
+          <Property Name="match_key_1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_text_1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_cat_1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_key_2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_text_2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_cat_2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_key_3" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_text_3" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_cat_3" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_key_4" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_text_4" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_cat_4" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_key_5" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_text_5" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_cat_5" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_key_6" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_text_6" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="match_cat_6" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_name_1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_value_1" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="mood_name_2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_value_2" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="mood_name_3" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_value_3" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="mood_name_4" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_value_4" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="mood_name_5" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_value_5" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="mood_name_6" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_value_6" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="mood_name_7" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_value_7" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="mood_name_8" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_value_8" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="mood_name_9" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_value_9" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="mood_name_10" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="mood_value_10" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="time" Type="Int64" />
+          <Property Name="utc_date" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="utc_year" Type="Int32" />
+          <Property Name="utc_month" Type="Int32" />
+          <Property Name="utc_day" Type="Int32" />
+          <Property Name="utc_hours" Type="Int32" />
+          <Property Name="utc_minutes" Type="Int32" />
+          <Property Name="nm_utc_year" Type="Int32" />
+          <Property Name="nm_utc_month" Type="Int32" />
+          <Property Name="nm_utc_day" Type="Int32" />
+          <Property Name="nm_utc_hours" Type="Int32" />
+          <Property Name="nm_utc_minutes" Type="Int32" />
+          <Property Name="bing_positive" Type="Int32" />
+          <Property Name="bing_negative" Type="Int32" />
+          <Property Name="id" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="pmid" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="birddogModelStoreContainer" CdmEntityContainer="birddogEntities1">
+          <EntitySetMapping Name="tweets">
+            <EntityTypeMapping TypeName="birddogModel.tweet">
+              <MappingFragment StoreEntitySet="tweets">
+                <ScalarProperty Name="C_id" ColumnName="_id" />
+                <ScalarProperty Name="id_str" ColumnName="id_str" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="retweeted" ColumnName="retweeted" />
+                <ScalarProperty Name="screen_name" ColumnName="screen_name" />
+                <ScalarProperty Name="followers_count" ColumnName="followers_count" />
+                <ScalarProperty Name="match_key_1" ColumnName="match_key_1" />
+                <ScalarProperty Name="match_text_1" ColumnName="match_text_1" />
+                <ScalarProperty Name="match_cat_1" ColumnName="match_cat_1" />
+                <ScalarProperty Name="match_key_2" ColumnName="match_key_2" />
+                <ScalarProperty Name="match_text_2" ColumnName="match_text_2" />
+                <ScalarProperty Name="match_cat_2" ColumnName="match_cat_2" />
+                <ScalarProperty Name="match_key_3" ColumnName="match_key_3" />
+                <ScalarProperty Name="match_text_3" ColumnName="match_text_3" />
+                <ScalarProperty Name="match_cat_3" ColumnName="match_cat_3" />
+                <ScalarProperty Name="match_key_4" ColumnName="match_key_4" />
+                <ScalarProperty Name="match_text_4" ColumnName="match_text_4" />
+                <ScalarProperty Name="match_cat_4" ColumnName="match_cat_4" />
+                <ScalarProperty Name="match_key_5" ColumnName="match_key_5" />
+                <ScalarProperty Name="match_text_5" ColumnName="match_text_5" />
+                <ScalarProperty Name="match_cat_5" ColumnName="match_cat_5" />
+                <ScalarProperty Name="match_key_6" ColumnName="match_key_6" />
+                <ScalarProperty Name="match_text_6" ColumnName="match_text_6" />
+                <ScalarProperty Name="match_cat_6" ColumnName="match_cat_6" />
+                <ScalarProperty Name="mood_name_1" ColumnName="mood_name_1" />
+                <ScalarProperty Name="mood_value_1" ColumnName="mood_value_1" />
+                <ScalarProperty Name="mood_name_2" ColumnName="mood_name_2" />
+                <ScalarProperty Name="mood_value_2" ColumnName="mood_value_2" />
+                <ScalarProperty Name="mood_name_3" ColumnName="mood_name_3" />
+                <ScalarProperty Name="mood_value_3" ColumnName="mood_value_3" />
+                <ScalarProperty Name="mood_name_4" ColumnName="mood_name_4" />
+                <ScalarProperty Name="mood_value_4" ColumnName="mood_value_4" />
+                <ScalarProperty Name="mood_name_5" ColumnName="mood_name_5" />
+                <ScalarProperty Name="mood_value_5" ColumnName="mood_value_5" />
+                <ScalarProperty Name="mood_name_6" ColumnName="mood_name_6" />
+                <ScalarProperty Name="mood_value_6" ColumnName="mood_value_6" />
+                <ScalarProperty Name="mood_name_7" ColumnName="mood_name_7" />
+                <ScalarProperty Name="mood_value_7" ColumnName="mood_value_7" />
+                <ScalarProperty Name="mood_name_8" ColumnName="mood_name_8" />
+                <ScalarProperty Name="mood_value_8" ColumnName="mood_value_8" />
+                <ScalarProperty Name="mood_name_9" ColumnName="mood_name_9" />
+                <ScalarProperty Name="mood_value_9" ColumnName="mood_value_9" />
+                <ScalarProperty Name="mood_name_10" ColumnName="mood_name_10" />
+                <ScalarProperty Name="mood_value_10" ColumnName="mood_value_10" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="utc_date" ColumnName="utc_date" />
+                <ScalarProperty Name="utc_year" ColumnName="utc_year" />
+                <ScalarProperty Name="utc_month" ColumnName="utc_month" />
+                <ScalarProperty Name="utc_day" ColumnName="utc_day" />
+                <ScalarProperty Name="utc_hours" ColumnName="utc_hours" />
+                <ScalarProperty Name="utc_minutes" ColumnName="utc_minutes" />
+                <ScalarProperty Name="nm_utc_year" ColumnName="nm_utc_year" />
+                <ScalarProperty Name="nm_utc_month" ColumnName="nm_utc_month" />
+                <ScalarProperty Name="nm_utc_day" ColumnName="nm_utc_day" />
+                <ScalarProperty Name="nm_utc_hours" ColumnName="nm_utc_hours" />
+                <ScalarProperty Name="nm_utc_minutes" ColumnName="nm_utc_minutes" />
+                <ScalarProperty Name="bing_positive" ColumnName="bing_positive" />
+                <ScalarProperty Name="bing_negative" ColumnName="bing_negative" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pmid" ColumnName="pmid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
