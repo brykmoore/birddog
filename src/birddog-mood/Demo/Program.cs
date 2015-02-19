@@ -11,11 +11,13 @@ using MoodFinder.Domain;
 using MoodFinder.StringMatching;
 using System.Collections.Generic;
 using System.Data;
+using System.Reflection;
+using System.Collections.Concurrent;
 
 namespace Demo
 {
     public class fulltweets {
-        public int id { get; set; }
+        public int64 id { get; set; }
         public string text { get; set; }
         public decimal bing_positive { get; set; }
         public decimal bing_negative {get; set;}
@@ -34,30 +36,28 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-                
-            var stemmer = new Stemming();
-            var moodList = new MoodListing().BingLiuMoodList;
-            trie = new Trie<MoodValue>();
+            var startTime = DateTime.Now;
+            stemmer = new Stemming();
+            moodList = new MoodListing().BingLiuMoodList;
+            bingliuTrie = new Trie<MoodValue>();
             foreach (var item in moodList)
             {
-                //trie.Add(stemmer.Stem(item.Word), item.Value);
-                trie.Add(item.Word, item.Value);
+                bingliuTrie.Add(item.Word, item.Value);
             }
 
-            trie.Build();
+            bingliuTrie.Build();
 
-            var drummondmoodList = new MoodListing().DrummondMoodList;
+            drummondMoodList = new MoodListing().DrummondMoodList;
             drummondTrie = new Trie<MoodValue>();
-            foreach (var item in moodList)
+            foreach (var item in drummondMoodList)
             {
-                trie.Add(stemmer.Stem(item.Word), item.Value);
+                drummondTrie.Add(item.Word, item.Value);
             }
 
-            trie.Build();
-            //6,915,322
+            drummondTrie.Build();
 
             var count = getCount();
-            var batchSize = 200000;
+            var batchSize = 500000;
             var rounds = (count / batchSize) + 1;
             var list = new List<string>();
             var dataTable = new DataTable("tweet_moods");
@@ -87,7 +87,6 @@ namespace Demo
                 {
                     sqlConnection.Open();
 
-                    // Truncate the live table
                     using (var sqlCommand = new SqlCommand("SELECT id, text from full_tweets where id >= " +
                         (i * batchSize).ToString() + " AND id < " + ((i + 1) * batchSize).ToString(), sqlConnection))
                     {
@@ -95,12 +94,9 @@ namespace Demo
                         {
                             while (reader.Read())
                             {
-                                var typeid = reader["text"].GetType();
-                                var typetext = reader["id"].GetType();
-                                var something = 9;
                                 tweetList.Add(new fulltweets {
-                                    id = (int)reader.GetInt64(0),
-                                    text = (string)reader.GetString(1)
+                                    id = reader.GetInt64(0),
+                                    text = reader.GetString(1)
                                 });
                             }
                         }
@@ -109,14 +105,13 @@ namespace Demo
 
                     sqlConnection.Close();
                 }
-
-                for(int j = 0; j < tweetList.Count; j++){
-                    tweetList[j] = process(tweetList[j]);
-                }
-                for (int j = 0; j < tweetList.Count; j++)
+                var concurrentTweets = new ConcurrentBag<fulltweets>();
+                Parallel.ForEach(tweetList, item =>
                 {
-                    tweetList[j] = process(tweetList[j]);
-                }
+                    concurrentTweets.Add(process(item));
+                });
+
+                Console.WriteLine(DateTime.Now - startTime);
 
                 using (var sqlConnection = new SqlConnection("data source=BUFFALO-PC;initial catalog=birddog;integrated security=True;"))
                 {
@@ -131,6 +126,7 @@ namespace Demo
                     // Setup the column mappings, anything ommitted is skipped
                     sqlBulkCopy.ColumnMappings.Add("id", "id");
                     sqlBulkCopy.ColumnMappings.Add("bing_positive", "bing_positive");
+                    sqlBulkCopy.ColumnMappings.Add("bing_negative", "bing_negative");
                     sqlBulkCopy.ColumnMappings.Add("D_Happiness", "D_Happiness");
                     sqlBulkCopy.ColumnMappings.Add("D_Caring", "D_Caring");
                     sqlBulkCopy.ColumnMappings.Add("D_Depression", "D_Depression");
@@ -143,24 +139,25 @@ namespace Demo
                     sqlBulkCopy.ColumnMappings.Add("D_Loneliness", "D_Loneliness");
                     sqlBulkCopy.ColumnMappings.Add("D_Remorse", "D_Remorse");
                     var _batchSize = 100000;
-                    for (int j = 0; j < tweetList.Count; j++)
+                    var listOfTweets = concurrentTweets.ToList();
+                    for (int j = 0; j < listOfTweets.Count; j++)
                     {
-                        dataTable.Rows.Add(tweetList[j].id, 
-                            
-                            tweetList[j].bing_positive,
-                            tweetList[j].bing_negative,
+                        dataTable.Rows.Add(listOfTweets[j].id,
 
-                            tweetList[j].D_Happiness,
-                            tweetList[j].D_Caring,
-                            tweetList[j].D_Depression,
-                            tweetList[j].D_Inadequateness,
-                            tweetList[j].D_Fear,
+                            listOfTweets[j].bing_positive,
+                            listOfTweets[j].bing_negative,
 
-                            tweetList[j].D_Confusion,
-                            tweetList[j].D_Hurt,
-                            tweetList[j].D_Anger,
-                            tweetList[j].D_Loneliness,
-                            tweetList[j].D_Remorse                            
+                            listOfTweets[j].D_Happiness,
+                            listOfTweets[j].D_Caring,
+                            listOfTweets[j].D_Depression,
+                            listOfTweets[j].D_Inadequateness,
+                            listOfTweets[j].D_Fear,
+
+                            listOfTweets[j].D_Confusion,
+                            listOfTweets[j].D_Hurt,
+                            listOfTweets[j].D_Anger,
+                            listOfTweets[j].D_Loneliness,
+                            listOfTweets[j].D_Remorse                            
                             );
 
                         if (j % _batchSize == 0)
@@ -188,6 +185,7 @@ namespace Demo
                     // Truncate the live table
                     using (var sqlCommand = new SqlCommand("SELECT Count(*) from full_tweets", sqlConnection))
                     {
+                        sqlCommand.CommandTimeout = 90;
                         count = (int)sqlCommand.ExecuteScalar();
                     }
 
@@ -231,8 +229,23 @@ namespace Demo
 
         public static fulltweets process(fulltweets item)
         {
+            //lowercase
+            item.text = item.text.ToLower();
+            //strip punctuation
+            item.text = new string(item.text.Where(x => !char.IsPunctuation(x)).ToArray());
+            //var stemmer = new EnglishStemmer();
 
-            var returnValue = processBingLiu(item.text);
+
+            var matches = Regex.Matches(item.text, @"((\b[^\s]+\b)((?<=\.\w).)?)");
+            var inputString = "";
+
+            foreach (var unit in matches)
+            {
+                inputString += unit.ToString() + " ";
+            }
+
+
+            var returnValue = processBingLiu(inputString);
             var positive = returnValue.Where(x => x.Category == "Positive").ToList();
             var negative = returnValue.Where(x => x.Category == "Negative").ToList();
             if (positive != null && positive.Count > 0)
@@ -251,7 +264,7 @@ namespace Demo
                 item.bing_negative = 0;
             }
 
-            var returnValueTwo = processDrummond(item.text);
+            returnValue = processDrummond(inputString);
 
             //HAPPINESS
             var happiness = returnValue.Where(x => x.Category == "Happiness").ToList();
@@ -370,29 +383,13 @@ namespace Demo
 
         }
 
-        private static Trie<MoodValue> trie;
+        private static Trie<MoodValue> bingliuTrie;
         private static Trie<MoodValue> drummondTrie;
         private static List<MoodItem> drummondMoodList;
-
+        private static Stemming stemmer;
         private static List<MoodItem> moodList;
-        private static List<MoodFrequencyItem> processDrummond(string text)
+        private static List<MoodFrequencyItem> processDrummond(string inputString)
         {
-            var stemmer = new Stemming();
-
-            //lowercase
-            text = text.ToLower();
-            //strip punctuation
-            text = new string(text.Where(x => !char.IsPunctuation(x)).ToArray());
-            //var stemmer = new EnglishStemmer();
-
-
-            var matches = Regex.Matches(text, @"((\b[^\s]+\b)((?<=\.\w).)?)");
-            var inputString = "";
-
-            foreach (var item in matches)
-            {
-                inputString += stemmer.Stem(item.ToString()) + " ";
-            }
             var list = drummondTrie.Find(inputString).GroupBy(x => new { x.Category }).Select(g => new MoodFrequencyItem()
             {
                 Category = g.Key.Category,
@@ -403,6 +400,7 @@ namespace Demo
             {
                 Category = y
             }).ToList();
+
             var sum = list.Sum(mood => mood.Count);
 
             foreach (var mood in list)
@@ -413,45 +411,18 @@ namespace Demo
                     firstOrDefault.Count = mood.Count / sum;
                 }
             }
-            return list;
+            return moodResults;
         }
-        private static List<MoodFrequencyItem> processBingLiu(string text){
-            var stemmer = new Stemming();
 
-            //lowercase
-            text = text.ToLower();
-            //strip punctuation
-            text = new string(text.Where(x => !char.IsPunctuation(x)).ToArray());
-            //var stemmer = new EnglishStemmer();
-
-
-            var matches = Regex.Matches(text, @"((\b[^\s]+\b)((?<=\.\w).)?)");
-            var inputString = "";
-
-            foreach (var item in matches)
-            {
-                inputString += item.ToString() + " ";
-            }
-            var list = trie.Find(inputString).GroupBy(x => new { x.Category }).Select(g => new MoodFrequencyItem()
+        private static List<MoodFrequencyItem> processBingLiu(string inputString)
+        {
+            var list = bingliuTrie.Find(inputString).GroupBy(x => new { x.Category }).Select(g => new MoodFrequencyItem()
             {
                 Category = g.Key.Category,
                 Count = g.Sum(x => x.Weight)
             }).ToList();
 
-            var moodResults = moodList.Select(x => x.Value.Category).Distinct().Select(y => new MoodFrequencyItem
-            {
-                Category = y
-            }).ToList();
-            var sum = list.Sum(mood => mood.Count);
 
-            foreach (var mood in list)
-            {
-                var firstOrDefault = moodResults.FirstOrDefault(x => x.Category == mood.Category);
-                if (firstOrDefault != null)
-                {
-                    firstOrDefault.Count = mood.Count / sum;
-                }
-            }
             return list;
         }
     }
