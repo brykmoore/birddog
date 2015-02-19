@@ -17,7 +17,7 @@ using System.Collections.Concurrent;
 namespace Demo
 {
     public class fulltweets {
-        public int64 id { get; set; }
+        public Int64 id { get; set; }
         public string text { get; set; }
         public decimal bing_positive { get; set; }
         public decimal bing_negative {get; set;}
@@ -396,22 +396,22 @@ namespace Demo
                 Count = g.Sum(x => x.Weight)
             }).ToList();
 
-            var moodResults = drummondMoodList.Select(x => x.Value.Category).Distinct().Select(y => new MoodFrequencyItem
-            {
-                Category = y
-            }).ToList();
+            //var moodResults = drummondMoodList.Select(x => x.Value.Category).Distinct().Select(y => new MoodFrequencyItem
+            //{
+            //    Category = y
+            //}).ToList();
 
-            var sum = list.Sum(mood => mood.Count);
+            //var sum = list.Sum(mood => mood.Count);
 
-            foreach (var mood in list)
-            {
-                var firstOrDefault = moodResults.FirstOrDefault(x => x.Category == mood.Category);
-                if (firstOrDefault != null)
-                {
-                    firstOrDefault.Count = mood.Count / sum;
-                }
-            }
-            return moodResults;
+            //foreach (var mood in list)
+            //{
+            //    var firstOrDefault = moodResults.FirstOrDefault(x => x.Category == mood.Category);
+            //    if (firstOrDefault != null)
+            //    {
+            //        firstOrDefault.Count = mood.Count / sum;
+            //    }
+            //}
+            return list;
         }
 
         private static List<MoodFrequencyItem> processBingLiu(string inputString)
