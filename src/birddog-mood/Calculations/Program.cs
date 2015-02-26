@@ -111,6 +111,7 @@ namespace Calculations
                     using (var sqlCommand = new SqlCommand("SELECT id, key1, key2, key3, key4, key5, key6, bing_positive,bing_negative,D_Happiness,D_Caring,D_Depression,D_Inadequateness,D_Fear,D_Confusion,D_Hurt,D_Anger,D_Loneliness,D_Remorse,year,month,day,hour,minute from full_tweets where id >= " +
                         (i * batchSize).ToString() + " AND id < " + ((i + 1) * batchSize).ToString(), sqlConnection))
                     {
+                        sqlCommand.CommandTimeout = 120;
                         using (var reader = sqlCommand.ExecuteReader())
                         {
                             while (reader.Read())
@@ -140,7 +141,7 @@ namespace Calculations
                                     D_Remorse = reader.GetDecimal(18),
 
                                     year = reader.GetInt32(19),
-                                    month = reader.GetInt32(20),
+                                    month = reader.GetInt32(20) + 1,
                                     day = reader.GetInt32(21),
                                     hour = reader.GetInt32(22),
                                     minute = reader.GetInt32(23)
@@ -203,6 +204,7 @@ namespace Calculations
 
                     var _batchSize = 100000;
                     var listOfTweets = concurrentTweets.ToList();
+
                     for (int j = 0; j < listOfTweets.Count; j++)
                     {
                         dataTable.Rows.Add(
@@ -334,7 +336,7 @@ namespace Calculations
             try
             {
                 sqlBulkCopy.WriteToServer(dataTable);
-
+                sqlBulkCopy.BulkCopyTimeout = 120;
                 dataTable.Rows.Clear();
             }
             catch (SqlException ex)

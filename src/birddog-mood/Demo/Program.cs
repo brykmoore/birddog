@@ -78,9 +78,20 @@ namespace Demo
             dataTable.Columns.Add("D_Anger");
             dataTable.Columns.Add("D_Loneliness");
             dataTable.Columns.Add("D_Remorse");
+            var _truncateLiveTableCommandText = @"TRUNCATE TABLE tweet_moods";
+            using (var sqlConnection = new SqlConnection("data source=BUFFALO-PC;initial catalog=birddog;integrated security=True;"))
+            {
+                sqlConnection.Open();
 
+                // Truncate the live table
+                using (var sqlCommand = new SqlCommand(_truncateLiveTableCommandText, sqlConnection))
+                {
+                    sqlCommand.ExecuteNonQuery();
+                }
 
-            for (int i = 0; i < rounds; i++ )
+                sqlConnection.Close();
+            }
+            for (int i = 0; i < rounds; i++)
             {
                 var tweetList = new List<fulltweets>();
                 using (var sqlConnection = new SqlConnection("data source=BUFFALO-PC;initial catalog=birddog;integrated security=True;"))
@@ -94,7 +105,8 @@ namespace Demo
                         {
                             while (reader.Read())
                             {
-                                tweetList.Add(new fulltweets {
+                                tweetList.Add(new fulltweets
+                                {
                                     id = reader.GetInt64(0),
                                     text = reader.GetString(1)
                                 });
@@ -157,7 +169,7 @@ namespace Demo
                             listOfTweets[j].D_Hurt,
                             listOfTweets[j].D_Anger,
                             listOfTweets[j].D_Loneliness,
-                            listOfTweets[j].D_Remorse                            
+                            listOfTweets[j].D_Remorse
                             );
 
                         if (j % _batchSize == 0)
@@ -171,7 +183,7 @@ namespace Demo
 
                     sqlConnection.Close();
                 }
-            }
+            }         
         }
 
         static int getCount()
@@ -185,7 +197,7 @@ namespace Demo
                     // Truncate the live table
                     using (var sqlCommand = new SqlCommand("SELECT Count(*) from full_tweets", sqlConnection))
                     {
-                        sqlCommand.CommandTimeout = 90;
+                        sqlCommand.CommandTimeout = 120;
                         count = (int)sqlCommand.ExecuteScalar();
                     }
 
@@ -270,7 +282,7 @@ namespace Demo
             var happiness = returnValue.Where(x => x.Category == "Happiness").ToList();
             if (happiness != null && happiness.Count > 0)
             {
-                item.D_Happiness = (int)happiness.First().Count;
+                item.D_Happiness = (decimal)happiness.First().Count;
             }
             else
             {
@@ -281,7 +293,7 @@ namespace Demo
             var caring = returnValue.Where(x => x.Category == "Caring").ToList();
             if (caring != null && caring.Count > 0)
             {
-                item.D_Caring = (int)caring.First().Count;
+                item.D_Caring = (decimal)caring.First().Count;
             }
             else
             {
@@ -292,7 +304,7 @@ namespace Demo
             var depression = returnValue.Where(x => x.Category == "Depression").ToList();
             if (depression != null && depression.Count > 0)
             {
-                item.D_Depression = (int)depression.First().Count;
+                item.D_Depression = (decimal)depression.First().Count;
             }
             else
             {
@@ -303,7 +315,7 @@ namespace Demo
             var inadequateness = returnValue.Where(x => x.Category == "Inadequateness").ToList();
             if (inadequateness != null && inadequateness.Count > 0)
             {
-                item.D_Inadequateness = (int)inadequateness.First().Count;
+                item.D_Inadequateness = (decimal)inadequateness.First().Count;
             }
             else
             {
@@ -315,7 +327,7 @@ namespace Demo
 
             if (fear != null && fear.Count > 0)
             {
-                item.D_Fear = (int)fear.First().Count;
+                item.D_Fear = (decimal)fear.First().Count;
             }
             else
             {
@@ -326,7 +338,7 @@ namespace Demo
             var confusion = returnValue.Where(x => x.Category == "Confusion").ToList();
             if (confusion != null && confusion.Count > 0)
             {
-                item.D_Confusion = (int)confusion.First().Count;
+                item.D_Confusion = (decimal)confusion.First().Count;
             }
             else
             {
@@ -338,7 +350,7 @@ namespace Demo
 
             if (hurt != null && hurt.Count > 0)
             {
-                item.D_Hurt = (int)hurt.First().Count;
+                item.D_Hurt = (decimal)hurt.First().Count;
             }
             else
             {
@@ -349,7 +361,7 @@ namespace Demo
             var anger = returnValue.Where(x => x.Category == "Anger").ToList();
             if (anger != null && anger.Count > 0)
             {
-                item.D_Anger = (int)anger.First().Count;
+                item.D_Anger = (decimal)anger.First().Count;
             }
             else
             {
@@ -360,7 +372,7 @@ namespace Demo
             var loneliness = returnValue.Where(x => x.Category == "Loneliness").ToList();
             if (loneliness != null && loneliness.Count > 0)
             {
-                item.D_Loneliness = (int)loneliness.First().Count;
+                item.D_Loneliness = (decimal)loneliness.First().Count;
             }
             else
             {
@@ -371,7 +383,7 @@ namespace Demo
             var remorse = returnValue.Where(x => x.Category == "Remorse").ToList();
             if (remorse != null && remorse.Count > 0)
             {
-                item.D_Remorse = (int)remorse.First().Count;
+                item.D_Remorse = (decimal)remorse.First().Count;
             }
             else
             {
@@ -390,28 +402,28 @@ namespace Demo
         private static List<MoodItem> moodList;
         private static List<MoodFrequencyItem> processDrummond(string inputString)
         {
+            var result = drummondTrie.Find(inputString).GroupBy(x=> new { x.Category});
             var list = drummondTrie.Find(inputString).GroupBy(x => new { x.Category }).Select(g => new MoodFrequencyItem()
             {
                 Category = g.Key.Category,
                 Count = g.Sum(x => x.Weight)
             }).ToList();
 
-            //var moodResults = drummondMoodList.Select(x => x.Value.Category).Distinct().Select(y => new MoodFrequencyItem
-            //{
-            //    Category = y
-            //}).ToList();
+            var moodResults = drummondMoodList.Select(x => x.Value.Category).Distinct().Select(y => new MoodFrequencyItem
+            {
+                Category = y
+            }).ToList();
 
-            //var sum = list.Sum(mood => mood.Count);
+            foreach (var mood in list)
+            {
+                var firstOrDefault = moodResults.FirstOrDefault(x => x.Category == mood.Category);
+                if (firstOrDefault != null)
+                {
+                    firstOrDefault.Count = mood.Count;
+                }
+            }
 
-            //foreach (var mood in list)
-            //{
-            //    var firstOrDefault = moodResults.FirstOrDefault(x => x.Category == mood.Category);
-            //    if (firstOrDefault != null)
-            //    {
-            //        firstOrDefault.Count = mood.Count / sum;
-            //    }
-            //}
-            return list;
+            return moodResults;
         }
 
         private static List<MoodFrequencyItem> processBingLiu(string inputString)
