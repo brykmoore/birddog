@@ -29,6 +29,7 @@ namespace MoodFinder.Domain
     {
         public string Category { get; set; }
         public double Count { get; set; }
+        public List<string> Word { get; set; }
 
     }
     

@@ -45,6 +45,30 @@ namespace CSVExport
             listOfSymbols.Add("V");
             listOfSymbols.Add("WMT");
             foreach(var symbol in listOfSymbols){
+                var fullTweetQuery = @"
+            SELECT
+            k.[year],
+            k.[month],
+            k.[day],
+            k.[hour],
+            k.[minute],
+            k.[key],
+            f.[text],
+            k.[bing_positive],
+            k.[bing_negative],
+            k.[D_Happiness],
+            k.[D_Caring],
+            k.[D_Depression],
+            k.[D_Inadequateness],
+            k.[D_Fear],
+            k.[D_Confusion],
+            k.[D_Hurt],
+            k.[D_Anger],
+            k.[D_Loneliness],
+            k.[D_Remorse]
+
+  FROM [birddog].[dbo].[key_bridge] k join [birddog].[dbo].[full_tweets] f on k.id = f.id where k.[key] = '{0}' order by k.[year],
+      k.[month], k.[day], k.[hour], k.[minute]".Replace("{0}", symbol);
                 var query = @"SELECT
                   q.[year]
                   ,q.[month]
@@ -114,8 +138,15 @@ namespace CSVExport
 
 
                 var destinationFile = symbol + ".csv";
+                var fullFile = symbol + "-tweets.csv";
+                QueryAndWriteToCSV(destinationFile, query);
+                QueryAndWriteToCSV(fullFile, fullTweetQuery);
 
-                using (var sqlConnection = new SqlConnection("data source=BUFFALO-PC;initial catalog=birddog;integrated security=True;"))
+            }//end foreach
+        }
+
+        private static void QueryAndWriteToCSV(string destinationFile, string query){
+                            using (var sqlConnection = new SqlConnection("data source=BUFFALO-SOLDIER;initial catalog=birddog;integrated security=True;"))
                 {
                     sqlConnection.Open();
 
@@ -146,7 +177,6 @@ namespace CSVExport
 
                     sqlConnection.Close();
                 }
-            }//end foreach
         }
         private static IEnumerable<string> GetColumnNames(IDataReader reader)
         {

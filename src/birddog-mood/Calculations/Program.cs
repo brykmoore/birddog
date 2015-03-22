@@ -63,13 +63,28 @@ namespace Calculations
 
     class Program
     {
+        private static void ExecuteNonQuery(string command)
+        {
+            using (var sqlConnection = new SqlConnection("data source=BUFFALO-SOLDIER;initial catalog=birddog;integrated security=True;"))
+            {
+                sqlConnection.Open();
 
+                using (var sqlCommand = new SqlCommand(command, sqlConnection))
+                {
+                    sqlCommand.ExecuteNonQuery();
+                }
+
+                sqlConnection.Close();
+            }
+        }
         static void Main(string[] args)
         {
 
             var startTime = DateTime.Now;
 
+            var _truncateTweetMoodsCommandText = @"TRUNCATE TABLE key_bridge";
 
+            ExecuteNonQuery(_truncateTweetMoodsCommandText);
             var count = getCount();
             var batchSize = 500000;
             var rounds = (count / batchSize) + 1;
@@ -104,7 +119,7 @@ namespace Calculations
             for (int i = 0; i < rounds; i++)
             {
                 var tweetList = new List<fulltweets>();
-                using (var sqlConnection = new SqlConnection("data source=BUFFALO-PC;initial catalog=birddog;integrated security=True;"))
+                using (var sqlConnection = new SqlConnection("data source=BUFFALO-SOLDIER;initial catalog=birddog;integrated security=True;"))
                 {
                     sqlConnection.Open();
 
@@ -156,11 +171,16 @@ namespace Calculations
                     sqlConnection.Close();
                 }
                 var concurrentTweets = new ConcurrentBag<keybridge>();
+                //foreach (var item in tweetList)
+                //{
+                //    var returnList = process(item);
+                //    concurrentTweets.AddRange(returnList);
+                //}
                 Parallel.ForEach(tweetList, item =>
                 {
                     var returnList = process(item);
 
-                    foreach(var returnItem in returnList)
+                    foreach (var returnItem in returnList)
                     {
                         concurrentTweets.Add(returnItem);
                     }
@@ -168,7 +188,7 @@ namespace Calculations
 
                 Console.WriteLine(DateTime.Now - startTime);
 
-                using (var sqlConnection = new SqlConnection("data source=BUFFALO-PC;initial catalog=birddog;integrated security=True;"))
+                using (var sqlConnection = new SqlConnection("data source=BUFFALO-SOLDIER;initial catalog=birddog;integrated security=True;"))
                 {
                     sqlConnection.Open();
 
@@ -249,11 +269,8 @@ namespace Calculations
                 }
             }
         }
-
-        static List<keybridge> process(fulltweets tweet) {
-
-            var keybridge = new List<keybridge>();
-
+        static keybridge create_new_copy(fulltweets tweet)
+        {
             var keybridgeItem = new keybridge
             {
                 id = tweet.id,
@@ -278,34 +295,47 @@ namespace Calculations
                 D_Loneliness = tweet.D_Loneliness,
                 D_Remorse = tweet.D_Remorse
             };
+            return keybridgeItem;
+        }
+        static List<keybridge> process(fulltweets tweet) {
+
+            var keybridge = new List<keybridge>();
+
+            
             if(tweet.key1 != ""){
-                keybridgeItem.key = tweet.key1;
-                keybridge.Add(keybridgeItem);
+                var keybridgeNewItem = create_new_copy(tweet);
+                keybridgeNewItem.key = tweet.key1;
+                keybridge.Add(keybridgeNewItem);
             }
             if (tweet.key2 != "")
             {
-                keybridgeItem.key = tweet.key2;
-                keybridge.Add(keybridgeItem);
+                var keybridgeNewItem = create_new_copy(tweet);
+                keybridgeNewItem.key = tweet.key2;
+                keybridge.Add(keybridgeNewItem);
             }
             if (tweet.key3 != "")
             {
-                keybridgeItem.key = tweet.key3;
-                keybridge.Add(keybridgeItem);
+                var keybridgeNewItem = create_new_copy(tweet);
+                keybridgeNewItem.key = tweet.key3;
+                keybridge.Add(keybridgeNewItem);
             }
             if (tweet.key4 != "")
             {
-                keybridgeItem.key = tweet.key4;
-                keybridge.Add(keybridgeItem);
+                var keybridgeNewItem = create_new_copy(tweet);
+                keybridgeNewItem.key = tweet.key4;
+                keybridge.Add(keybridgeNewItem);
             }
             if (tweet.key5 != "")
             {
-                keybridgeItem.key = tweet.key5;
-                keybridge.Add(keybridgeItem);
+                var keybridgeNewItem = create_new_copy(tweet);
+                keybridgeNewItem.key = tweet.key5;
+                keybridge.Add(keybridgeNewItem);
             }
             if (tweet.key6 != "")
             {
-                keybridgeItem.key = tweet.key6;
-                keybridge.Add(keybridgeItem);
+                var keybridgeNewItem = create_new_copy(tweet);
+                keybridgeNewItem.key = tweet.key6;
+                keybridge.Add(keybridgeNewItem);
             }
             return keybridge;
         
@@ -314,7 +344,7 @@ namespace Calculations
         {
             var count = 0;
 
-            using (var sqlConnection = new SqlConnection("data source=BUFFALO-PC;initial catalog=birddog;integrated security=True;"))
+            using (var sqlConnection = new SqlConnection("data source=BUFFALO-SOLDIER;initial catalog=birddog;integrated security=True;"))
             {
                 sqlConnection.Open();
 

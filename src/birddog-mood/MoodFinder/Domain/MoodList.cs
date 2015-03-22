@@ -41,7 +41,23 @@ namespace MoodFinder
                 }
                 return moods;
             }
-        } 
+        }
+        public List<MoodItem> PlutchikMoodList
+        {
+            get
+            {
+                return new List<MoodItem>{
+                new MoodItem{Word = "acceptance", Value = new MoodValue {Category = "", Weight = 1}},
+                new MoodItem{Word = "anger", Value = new MoodValue {Category = "", Weight = 1}},
+                new MoodItem{Word = "anticipation", Value = new MoodValue {Category = "", Weight = 1}},
+                new MoodItem{Word = "disgust", Value = new MoodValue {Category = "", Weight = 1}},
+                new MoodItem{Word = "joy", Value = new MoodValue {Category = "", Weight = 1}},
+                new MoodItem{Word = "fear", Value = new MoodValue {Category = "", Weight = 1}},
+                new MoodItem{Word = "sadness", Value = new MoodValue {Category = "", Weight = 1}},
+                new MoodItem{Word = "surprise", Value = new MoodValue {Category = "", Weight = 1}}
+                };
+            }
+        }
         public List<MoodItem> DrummondMoodList
         {
             get
